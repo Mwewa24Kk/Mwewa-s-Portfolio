@@ -465,6 +465,14 @@ footer {
   margin: 0;
 }
 
+.home-page .home-services .section-kicker {
+  color: rgb(255, 102, 0);
+}
+
+.home-page .home-contact .section-kicker {
+  color: rgb(255, 102, 0);
+}
+
 .home-page .home-services h2,
 .home-page .home-contact h2 {
   margin: 0.2rem 0 1.5rem;
@@ -602,6 +610,14 @@ footer {
   color: #aeb8df;
 }
 
+.home-page.dark-mode .home-services .section-kicker {
+  color: rgb(255, 102, 0);
+}
+
+.home-page.dark-mode .home-contact .section-kicker {
+  color: rgb(255, 102, 0);
+}
+
 .home-page.dark-mode .hero-copy .hero-label {
   color: #ff8d4a;
 }
@@ -721,6 +737,10 @@ footer {
 .portfolio-page.dark-mode .home-footer,
 .contact-page.dark-mode .home-footer {
   color: #aeb8df;
+}
+
+.services-page.dark-mode .services-content .section-kicker {
+  color: rgb(255, 102, 0);
 }
 
 /* Shared Theme For Other Pages */
@@ -895,6 +915,10 @@ footer {
   max-width: 620px;
   color: #4d557a;
   line-height: 1.7;
+}
+
+.services-page .services-content .section-kicker {
+  color: rgb(255, 102, 0);
 }
 
 .services-page .service-grid,
