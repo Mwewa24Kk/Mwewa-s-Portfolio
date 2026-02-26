@@ -1,29 +1,30 @@
 # Kondwani Moyo Portfolio
 
-A clean, responsive personal portfolio website showcasing services, selected projects, and a Firebase-powered contact form.
+A responsive portfolio website focused on services and contact conversion, with glassmorphism styling and cross-page light/dark mode.
 
 ## Live Pages
 - `index.html` - Home
 - `services.html` - Services
-- `portfolio.html` - Portfolio
 - `contact.html` - Contact
 
-## Features
-- Clear visual hierarchy across all pages
-- Responsive layout for desktop/tablet/mobile
-- Staggered reveal animations with reduced-motion support
-- Active navigation state (`aria-current`)
+## Current Features
+- Glass-style navbar and UI cards
+- Circular glass photo card on homepage (`me.jpeg`)
+- Navbar theme toggle icon on all pages
+- Light/dark mode persisted with `localStorage` (`portfolio-theme`)
+- Responsive layout with preserved navbar structure on smaller screens
+- Orange-accent heading/kicker styling updates across sections
 - Contact form with:
   - Input sanitization
   - Field-level validation
-  - Inline error messages
-  - Compact success/error status message
+  - Inline error messaging
   - Firestore submission via Firebase
+- Social links updated for Facebook, Instagram, and WhatsApp
 
 ## Tech Stack
 - HTML5
 - CSS3 (`theme.css`)
-- Vanilla JavaScript (module script in `contact.html`)
+- Vanilla JavaScript
 - Firebase Firestore (`firebase.js`)
 
 ## Project Structure
@@ -31,35 +32,30 @@ A clean, responsive personal portfolio website showcasing services, selected pro
 PORTFOLIO/
 |-- index.html
 |-- services.html
-|-- portfolio.html
 |-- contact.html
 |-- theme.css
 |-- firebase.js
+|-- me.jpeg
+|-- image0.png
 |-- Icons/
-`-- image0.png
+`-- README.md
 ```
 
 ## Run Locally
 1. Open the project folder.
-2. Launch `index.html` in your browser.
-3. Test navigation and layout responsiveness.
+2. Open `index.html` in a browser.
+3. Test navigation, theme toggle, and contact form behavior.
 
-## Firebase Contact Form Setup
+## Firebase Setup
 1. Create a Firebase project.
 2. Enable Firestore Database.
 3. Add your Firebase web config in `firebase.js`.
-4. Ensure Firestore rules allow writes for your use case.
-5. Test form submission from `contact.html`.
+4. Set Firestore security rules for your use case.
+5. Submit the form on `contact.html` to verify writes.
 
 ## Deploy on GitHub Pages
-1. Push this project to a public GitHub repository.
-2. Go to `Settings > Pages`.
+1. Push changes to `main`.
+2. In GitHub: `Settings > Pages`.
 3. Set source to `Deploy from a branch`.
-4. Choose branch `main` and folder `/ (root)`.
+4. Select `main` and `/ (root)`.
 5. Save and wait for deployment.
-
-## Customization
-- Update text/content directly in each HTML page.
-- Update colors/spacing/animations in `theme.css`.
-- Replace social links and contact details in `contact.html`.
-- Add portfolio cards in `portfolio.html`.
