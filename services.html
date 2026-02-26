@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Kondwani Moyo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="theme.css" />
+</head>
+<body class="services-page">
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem("portfolio-theme") || localStorage.getItem("portfolio-home-theme");
+      if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    })();
+  </script>
+  <header class="home-header">
+    <nav class="home-nav">
+      <div class="menu-links">
+        <a href="index.html">Home</a>
+        <a href="services.html" aria-current="page">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <line x1="12" y1="2.5" x2="12" y2="5"></line>
+          <line x1="12" y1="19" x2="12" y2="21.5"></line>
+          <line x1="2.5" y1="12" x2="5" y2="12"></line>
+          <line x1="19" y1="12" x2="21.5" y2="12"></line>
+          <line x1="5.2" y1="5.2" x2="7" y2="7"></line>
+          <line x1="17" y1="17" x2="18.8" y2="18.8"></line>
+          <line x1="5.2" y1="18.8" x2="7" y2="17"></line>
+          <line x1="17" y1="7" x2="18.8" y2="5.2"></line>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14.2 2.5a9.5 9.5 0 1 0 7.3 14.8 8.5 8.5 0 1 1-7.3-14.8z"></path>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <p class="section-kicker">Services</p>
+      <h1>My Skills</h1>
+      <p>I help businesses and personal brands translate ideas into strong visuals and effective digital experiences.</p>
+    </section>
+
+    <section class="services-content">
+      <p class="section-kicker">Capabilities</p>
+      <p class="services-intro">
+        Each service is designed to move your project from a rough idea to a polished result with clear purpose.
+      </p>
+      <div class="service-grid">
+        <article class="service-card">
+          <h3>UI/UX Design</h3>
+          <p>User-focused interface design for web and mobile experiences that are clear and intuitive.</p>
+        </article>
+        <article class="service-card">
+          <h3>Web Development</h3>
+          <p>Responsive websites built for speed, accessibility, and a consistent visual identity.</p>
+        </article>
+        <article class="service-card">
+          <h3>Branding</h3>
+          <p>Logo systems, typography, and color direction that position your brand with confidence.</p>
+        </article>
+        <article class="service-card">
+          <h3>Graphic Design</h3>
+          <p>High-impact marketing and social assets for campaigns, launches, and daily content.</p>
+        </article>
+        <article class="service-card">
+          <h3>AI Image Generation</h3>
+          <p>Creating high-quality, custom AI-generated images for branding, marketing, and creative projects.</p>
+        </article>
+        <article class="service-card">
+          <h3>Computer Hardware Repair</h3>
+          <p>Providing professional repair and maintenance services for desktops, laptops, and other computing devices.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="home-footer">
+    &copy; 2026 Kondwani Moyo. All rights reserved.
+  </footer>
+  <script>
+    (function () {
+      var body = document.body;
+      var toggle = document.getElementById("themeToggle");
+      var storageKey = "portfolio-theme";
+
+      function applyTheme(theme) {
+        var isDark = theme === "dark";
+        body.classList.toggle("dark-mode", isDark);
+        if (toggle) {
+          toggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+          toggle.setAttribute("title", isDark ? "Switch to light mode" : "Switch to dark mode");
+        }
+      }
+
+      var saved = localStorage.getItem(storageKey) || localStorage.getItem("portfolio-home-theme");
+      if (saved === "dark" || saved === "light") {
+        applyTheme(saved);
+      }
+
+      if (toggle) {
+        toggle.addEventListener("click", function () {
+          var nextTheme = body.classList.contains("dark-mode") ? "light" : "dark";
+          applyTheme(nextTheme);
+          localStorage.setItem(storageKey, nextTheme);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
+
+

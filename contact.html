@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Kondwani Moyo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="theme.css" />
+</head>
+<body class="contact-page">
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem("portfolio-theme") || localStorage.getItem("portfolio-home-theme");
+      if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    })();
+  </script>
+  <header class="home-header">
+    <nav class="home-nav">
+      <div class="menu-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <line x1="12" y1="2.5" x2="12" y2="5"></line>
+          <line x1="12" y1="19" x2="12" y2="21.5"></line>
+          <line x1="2.5" y1="12" x2="5" y2="12"></line>
+          <line x1="19" y1="12" x2="21.5" y2="12"></line>
+          <line x1="5.2" y1="5.2" x2="7" y2="7"></line>
+          <line x1="17" y1="17" x2="18.8" y2="18.8"></line>
+          <line x1="5.2" y1="18.8" x2="7" y2="17"></line>
+          <line x1="17" y1="7" x2="18.8" y2="5.2"></line>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14.2 2.5a9.5 9.5 0 1 0 7.3 14.8 8.5 8.5 0 1 1-7.3-14.8z"></path>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <p class="section-kicker">Contact</p>
+      <h1>Contact me</h1>
+      <p>Have a project in mind? Share your goals and timeline, and I will get back to you as soon as possible.</p>
+    </section>
+
+    <section class="contact-content">
+      <form id="contactForm" class="contact-form themed-card" novalidate>
+        <p class="section-kicker">Start a Conversation</p>
+        <h2>Tell Me About Your Project</h2>
+        <p class="contact-form-intro">Share your goals, timeline, and what success looks like for you.</p>
+        <input
+          type="text"
+          name="name"
+          id="contact-name"
+          placeholder="Your Name"
+          autocomplete="name"
+          minlength="2"
+          maxlength="60"
+          pattern="[A-Za-z][A-Za-z\s.'-]{1,59}"
+          title="Use letters, spaces, apostrophes, dots, and hyphens only."
+          aria-describedby="name-error"
+          required
+        />
+        <p class="field-error" id="name-error" aria-live="polite"></p>
+        <input
+          type="email"
+          name="email"
+          id="contact-email"
+          placeholder="Your Email"
+          autocomplete="email"
+          inputmode="email"
+          maxlength="120"
+          pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"
+          title="Enter a valid email address, for example name@example.com."
+          aria-describedby="email-error"
+          required
+        />
+        <p class="field-error" id="email-error" aria-live="polite"></p>
+        <textarea
+          name="message"
+          id="contact-message"
+          placeholder="Tell me about your project"
+          rows="6"
+          minlength="20"
+          maxlength="1200"
+          aria-describedby="message-error"
+          required
+        ></textarea>
+        <p class="field-error" id="message-error" aria-live="polite"></p>
+        <button type="submit">Send Message</button>
+        <p class="form-status" id="form-status" aria-live="polite"></p>
+      </form>
+
+      <div class="social-media themed-card">
+        <h3>Connect With Me</h3>
+        <div class="social-links">
+          <a href="https://www.facebook.com/share/1Hct1y5QVH/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+            <img src="Icons/Facebook.png" alt="Facebook" />
+          </a>
+          <a href="https://www.instagram.com/the_human_condition24?igsh=MWd5bWtqNmI5cHV5eg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">
+            <img src="Icons/Instagram.png" alt="Instagram" />
+          </a>
+          <a href="https://wa.me/260772558661" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <img src="Icons/whatsapp.png" alt="WhatsApp" />
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="home-footer">
+    &copy; 2026 Kondwani Moyo. All rights reserved.
+  </footer>
+
+  <script>
+    (function () {
+      var body = document.body;
+      var toggle = document.getElementById("themeToggle");
+      var storageKey = "portfolio-theme";
+
+      function applyTheme(theme) {
+        var isDark = theme === "dark";
+        body.classList.toggle("dark-mode", isDark);
+        if (toggle) {
+          toggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+          toggle.setAttribute("title", isDark ? "Switch to light mode" : "Switch to dark mode");
+        }
+      }
+
+      var saved = localStorage.getItem(storageKey) || localStorage.getItem("portfolio-home-theme");
+      if (saved === "dark" || saved === "light") {
+        applyTheme(saved);
+      }
+
+      if (toggle) {
+        toggle.addEventListener("click", function () {
+          var nextTheme = body.classList.contains("dark-mode") ? "light" : "dark";
+          applyTheme(nextTheme);
+          localStorage.setItem(storageKey, nextTheme);
+        });
+      }
+    })();
+  </script>
+
+  <script type="module">
+    import { db, collection, addDoc, serverTimestamp } from "./firebase.js";
+
+    const form = document.getElementById("contactForm");
+    const nameInput = form.elements["name"];
+    const emailInput = form.elements["email"];
+    const messageInput = form.elements["message"];
+    const formStatusEl = document.getElementById("form-status");
+    const nameErrorEl = document.getElementById("name-error");
+    const emailErrorEl = document.getElementById("email-error");
+    const messageErrorEl = document.getElementById("message-error");
+
+    const NAME_REGEX = /^(?=.{2,60}$)[A-Za-z]+(?:[ .'-][A-Za-z]+)*$/;
+    const EMAIL_REGEX = /^(?=.{5,120}$)[A-Za-z0-9](?:[A-Za-z0-9._%+-]{0,62}[A-Za-z0-9])?@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z]{2,})+$/;
+    const MESSAGE_REGEX = /^[A-Za-z0-9\s.,!?'"()\-:;@/&+#%$*]+$/;
+
+    function sanitizeName(value) {
+      return value
+        .replace(/[^A-Za-z\s.'-]/g, "")
+        .replace(/\s{2,}/g, " ")
+        .replace(/([.'-]){2,}/g, "$1")
+        .trimStart();
+    }
+
+    function sanitizeEmail(value) {
+      return value.replace(/\s+/g, "").toLowerCase();
+    }
+
+    function sanitizeMessage(value) {
+      return value
+        .replace(/[^A-Za-z0-9\s.,!?'"()\-:;@/&+#%$*]/g, "")
+        .replace(/[ \t]{2,}/g, " ")
+        .trimStart();
+    }
+
+    function validateName(value) {
+      if (!value) return "Please enter your name.";
+      if (!NAME_REGEX.test(value)) {
+        return "Use letters with single spaces or . ' - between words only.";
+      }
+      return "";
+    }
+
+    function validateEmail(value) {
+      if (!value) return "Please enter your email address.";
+      if (!EMAIL_REGEX.test(value)) {
+        return "Enter a valid email address, for example name@example.com.";
+      }
+      return "";
+    }
+
+    function validateMessage(value) {
+      if (!value) return "Please enter your message.";
+      if (value.length < 20) return "Message must be at least 20 characters.";
+      if (!MESSAGE_REGEX.test(value)) {
+        return "Message has unsupported characters.";
+      }
+      return "";
+    }
+
+    function setFieldError(input, errorElement, message) {
+      input.setCustomValidity(message);
+      input.setAttribute("aria-invalid", message ? "true" : "false");
+      errorElement.textContent = message;
+    }
+
+    function setFormStatus(message, type = "") {
+      formStatusEl.textContent = message;
+      formStatusEl.className = "form-status" + (type ? ` is-${type}` : "");
+    }
+
+    nameInput.addEventListener("input", () => {
+      nameInput.value = sanitizeName(nameInput.value);
+      setFieldError(nameInput, nameErrorEl, "");
+    });
+    nameInput.addEventListener("blur", () => {
+      setFieldError(nameInput, nameErrorEl, validateName(nameInput.value.trim()));
+    });
+
+    emailInput.addEventListener("input", () => {
+      emailInput.value = sanitizeEmail(emailInput.value);
+      setFieldError(emailInput, emailErrorEl, "");
+    });
+    emailInput.addEventListener("blur", () => {
+      setFieldError(emailInput, emailErrorEl, validateEmail(emailInput.value.trim()));
+    });
+
+    messageInput.addEventListener("input", () => {
+      messageInput.value = sanitizeMessage(messageInput.value);
+      setFieldError(messageInput, messageErrorEl, "");
+    });
+    messageInput.addEventListener("blur", () => {
+      setFieldError(messageInput, messageErrorEl, validateMessage(messageInput.value.trim()));
+    });
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      setFormStatus("");
+
+      const name = sanitizeName(nameInput.value).trim();
+      const email = sanitizeEmail(emailInput.value).trim();
+      const message = sanitizeMessage(messageInput.value).trim();
+
+      nameInput.value = name;
+      emailInput.value = email;
+      messageInput.value = message;
+
+      const nameError = validateName(name);
+      if (nameError) {
+        setFieldError(nameInput, nameErrorEl, nameError);
+        nameInput.focus();
+        return;
+      }
+
+      const emailError = validateEmail(email);
+      if (emailError) {
+        setFieldError(emailInput, emailErrorEl, emailError);
+        emailInput.focus();
+        return;
+      }
+
+      const messageError = validateMessage(message);
+      if (messageError) {
+        setFieldError(messageInput, messageErrorEl, messageError);
+        messageInput.focus();
+        return;
+      }
+
+      try {
+        await addDoc(collection(db, "contacts"), {
+          name,
+          email,
+          message,
+          createdAt: serverTimestamp()
+        });
+
+        setFormStatus("Message sent successfully.", "success");
+        form.reset();
+        setFieldError(nameInput, nameErrorEl, "");
+        setFieldError(emailInput, emailErrorEl, "");
+        setFieldError(messageInput, messageErrorEl, "");
+      } catch (error) {
+        console.error("Error adding message: ", error);
+        setFormStatus("Failed to send message. Please try again.", "error");
+      }
+    });
+  </script>
+</body>
+</html>
+
+
