@@ -196,9 +196,9 @@ footer {
 .portfolio-page .theme-toggle,
 .contact-page .theme-toggle {
   position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
+  right: 0.8rem;
+  top: calc(100% + 0.4rem);
+  transform: none;
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -223,7 +223,7 @@ footer {
 .portfolio-page .theme-toggle:focus-visible,
 .contact-page .theme-toggle:hover,
 .contact-page .theme-toggle:focus-visible {
-  transform: translateY(-50%) translateY(-1px);
+  transform: translateY(-1px);
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.36) 0%, rgba(255, 255, 255, 0.2) 100%);
   box-shadow: 0 12px 28px rgba(19, 24, 46, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.4);
   outline: none;
@@ -333,7 +333,8 @@ footer {
   width: clamp(210px, 25vw, 290px);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  padding: 0.75rem;
+  padding: 0;
+  overflow: hidden;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.38) 0%, rgba(255, 255, 255, 0.16) 100%);
   border: 0.8px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(12px);
@@ -349,7 +350,7 @@ footer {
   object-fit: cover;
   border-radius: 50%;
   display: block;
-  border: 1.2px solid rgba(255, 255, 255, 0.45);
+  border: none;
 }
 
 .home-page .hero-copy h1 {
@@ -1160,7 +1161,7 @@ footer {
     flex-direction: row;
     flex-wrap: nowrap;
     padding-right: 4.1rem;
-    overflow-x: hidden;
+    overflow: visible;
   }
 
   .home-page .menu-links,
@@ -1187,9 +1188,9 @@ footer {
   .portfolio-page .theme-toggle,
   .contact-page .theme-toggle {
     position: absolute;
-    right: 0.8rem;
-    top: 50%;
-    transform: translateY(-50%);
+    right: 0.55rem;
+    top: calc(100% + 0.35rem);
+    transform: none;
   }
 
   .home-page .home-hero,
